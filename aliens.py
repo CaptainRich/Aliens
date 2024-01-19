@@ -31,18 +31,53 @@ class AlienInvasion:
 
         while True:
             # Watch for keyboard and mouse control events.
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    sys.exit()           # quite the game
+            self._check_events()
+            self.ship.update()
 
             # Redraw the screen (surface) during each loop pass, to apply
             # the background color.
-            self.screen.fill( self.settings.bg_color )
-            self.ship.blitme()            # display the alien ship
+            self._update_screen()
 
-            # Make the most recently drawn screen visible.
-            pygame.display.flip()
             self.clock.tick( 60 )  # run the loop 60 times/second
+
+
+    def _check_events( self ):
+        """ A helper method to respond to 'events'. Note the leading
+            underscore in the method name! """
+        
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()           # quit the game
+
+            # Check for certain 'movement' key presses.
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RIGHT:
+                    # Move the alien ship to the right
+                    self.ship.moving_right = True
+                elif event.key == pygame.K_LEFT:
+                    # Move the alien ship to the left
+                    self.ship.moving_left = True
+
+            elif event.type == pygame.KEYUP:
+                if event.key == pygame.K_RIGHT:
+                    # Stop the movement to the right.
+                    self.ship.moving_right = False
+                elif event.key == pygame.K_LEFT:
+                    # Stop the movement to the left.
+                    self.ship.moving_left = False
+
+
+
+    def _update_screen( self ):
+        """ A helper method to update the screen/display.  Note the leading
+            underscore in the method name! """
+        
+        self.screen.fill( self.settings.bg_color )
+        self.ship.blitme()            # display the alien ship
+
+        # Make the most recently drawn screen visible.
+        pygame.display.flip()
+
 
 ##############################################################################
 # Main
