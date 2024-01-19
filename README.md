@@ -46,21 +46,17 @@ Once this data is entered, the scan commences and the output file is generated. 
 
 
 ## References
-1. Python for You and Me, Kushal Das, Feb 17, 2021  
-2. Python Basics: A practical Introduction to Python 3, David Amos, Dan Bader, 2022  
-3. Python Ultimate Guide (web download, source unknown) 
+1. Python Crash Course, Eric Matthes, No Starch Press, 2023  
+
 
 ## File List
-**dir_list.py** - a small module with the 'worker' routines.  
-**directory-scan.py** - the main program (invoke this file).   
+**aliens.py** - the main game file.  
+
 
 ## Technologies and Imports
 The following modules are necessary imports (imported in the .py files):  
-- os
-- datetime
-- dirlist
-- pathlib
-- easygui
+- sys
+- pygame
 
 ## Sample Output
 The image above shows a sample output:
