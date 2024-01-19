@@ -1,7 +1,12 @@
 """ An 'alien invasion game. """
 
+# Required imports
 import sys
-import pygame
+import pygame          # MAKE SURE TO INVOKE THE VIRTUAL ENVIRONMENT!!!
+
+from settings import Settings    # The class that manages game settings.
+from ship import Ship            # The class that manages alien ships.
+
 
 ##############################################################################
 class AlienInvasion:
@@ -11,13 +16,15 @@ class AlienInvasion:
         """ Iniitialize the game, and create its resources. """
         pygame.init()
 
-        self.clock = pygame.time.Clock()   # to control for frame rate
+        self.clock    = pygame.time.Clock()   # to control for frame rate
+        self.settings = Settings()            # instantiate a "Settings" object
 
-        self.screen = pygame.display.set_mode( (1200,800) )  # game window size
+        self.screen = pygame.display.set_mode( 
+            (self.settings.screen_width, self.settings.screen_height) )
         pygame.display.set_caption( "Alien Invasion" )
 
-        # Set the background color of the game window (surface).
-        self.bg_color = ( 230, 230, 230 )
+        self.ship = Ship( self )      # Make an instance of an alien ship
+
 
     def run_game(self):
         """ Start the main interaction (event) loop for the game. """
@@ -30,7 +37,8 @@ class AlienInvasion:
 
             # Redraw the screen (surface) during each loop pass, to apply
             # the background color.
-            self.screen.fill( self.bg_color )
+            self.screen.fill( self.settings.bg_color )
+            self.ship.blitme()            # display the alien ship
 
             # Make the most recently drawn screen visible.
             pygame.display.flip()
