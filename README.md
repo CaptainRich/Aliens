@@ -52,6 +52,6 @@ The following modules are necessary imports (imported in the .py files):
 - pygame
 
 ## Sample Display
-The image above shows a sample game screen:
+The image below shows a sample game screen:
 ![Sample Display](https://github.com/CaptainRich/Aliens/blob/develop/Images/game-screen.png)
 
