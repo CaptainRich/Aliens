@@ -13,10 +13,10 @@ Richard Ay (February 2024, *updated February 2024*)
 
 ## Setup
 
-*(To use this program, copy both 'directory-scan.py' and 'dir_list.py' to a directory on a local drive.  Then invoke the program as indicated below.)* 
+*To use this program, activate the 'virtual environmnent' "AlienEnv".  
 
 ## Environment
-To utilize this scripts, a virtual environment is created so that the installation of PyGame remains
+A virtual environment is created so that the installation of PyGame remains
 local to this subdirectory, and does not affect the rest of the machine.
 
 The virtual environment can be setup using the command: 
@@ -30,19 +30,9 @@ After starting the virtual environment, PyGame can be installed with the command
 
 
 ## Usage
-There are three ways to use this small programs: (1) the Python IDLE, (2) VS Code, or (3) Windows Explorer.  
+From VSCode, by issuing the command 'python directory-scan.py' in the Terminal window. For VS Code it is important to change the Terminal from "Git Bash" to "Power Shell". Once in Power Shell, the command "python aliens.py" will run the file with the game screen displayed.  Note the suffix ".py" is required.
 
-1) From the IDLE, by selecting 'directory-scan.py' and pressing F5. For the Python IDLE, just start the IDLE (which opens a Python Shell), then select File/Open (which opens an Editor) and select the 'Directory_List.py" file.  From the Editor, F5 will run the file with the output written to a file, or diagnostics (trace-backs) appearing in the Shell.
-
-2) From VSCode, by issuing the command 'python directory-scan.py' in the Terminal window. For VS Code it is important to change the Terminal from "Git Bash" to "Power Shell". Once in Power Shell, the command "python [filename].py" will run the file with the output going to the output file (user specified).  Note the suffix ".py" is required.
-
-3) By double-clicking 'directory-scan.py' from Windows Explorer.
-
-The program prompts for two data items:
-1) The name of the output (text) file.
-2) The full pathname of the directory to scan.
-
-Once this data is entered, the scan commences and the output file is generated. The output file (specified by the user) is written to the target directory that is scanned.
+The Alien ship can be moved left/right using the keyboard 'arrow' keys.
 
 
 ## References
@@ -50,8 +40,11 @@ Once this data is entered, the scan commences and the output file is generated. 
 
 
 ## File List
-**aliens.py** - the main game file.  
+**aliens.py** - the main game file.    
+**settings.py** - a class module managing the game settings.  
+**ship.py** - a class module managing the alien ship setup and movement  
 
+**/images** - a subdirectory with game images
 
 ## Technologies and Imports
 The following modules are necessary imports (imported in the .py files):  
