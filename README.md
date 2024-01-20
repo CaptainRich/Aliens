@@ -9,7 +9,7 @@ Richard Ay (February 2024, *updated February 2024*)
 * [References](#references)
 * [File List](#file-list)
 * [Technologies and Imports](#Technologies-and-Imports)
-* [Sample Output](#sample-output)
+* [Sample Display](#sample-display)
 
 ## Setup
 
@@ -51,7 +51,7 @@ The following modules are necessary imports (imported in the .py files):
 - sys
 - pygame
 
-## Sample Output
+## Sample Display
 The image above shows a sample game screen:
-![Sample Scan](https://github.com/CaptainRich/aliens/blob/main/images/game-screen.png)
+![Sample Display](https://github.com/CaptainRich/Aliens/blob/develop/Images/game-screen.png)
 
