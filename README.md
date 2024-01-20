@@ -52,6 +52,6 @@ The following modules are necessary imports (imported in the .py files):
 - pygame
 
 ## Sample Output
-The image above shows a sample output:
-![Sample Scan](https://github.com/CaptainRich/dir_list/blob/main/scan-output.png)
+The image above shows a sample game screen:
+![Sample Scan](https://github.com/CaptainRich/aliens/blob/main/images/game-screen.png)
 
