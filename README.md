@@ -32,7 +32,7 @@ After starting the virtual environment, PyGame can be installed with the command
 ## Usage
 From VSCode, by issuing the command 'python directory-scan.py' in the Terminal window. For VS Code it is important to change the Terminal from "Git Bash" to "Power Shell". Once in Power Shell, the command "python aliens.py" will run the file with the game screen displayed.  Note the suffix ".py" is required.
 
-The Alien ship can be moved left/right using the keyboard 'arrow' keys.
+The Alien ship can be moved left/right using the keyboard 'arrow' keys.  The game can be stopped by pressing 'q', or the 'X" in the upper right of the window frame.
 
 
 ## References
@@ -40,9 +40,10 @@ The Alien ship can be moved left/right using the keyboard 'arrow' keys.
 
 
 ## File List
-**aliens.py** - the main game file.    
+**aliens.py** - the main game file, invoked to play the game.  
+**bullet.py** - a class module controlling the firing of bullets.    
 **settings.py** - a class module managing the game settings.  
-**ship.py** - a class module managing the alien ship setup and movement  
+**ship.py** - a class module managing the alien ship setup, drawing, and movement.  
 
 **/images** - a subdirectory with game images
 

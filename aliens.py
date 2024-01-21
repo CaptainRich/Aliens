@@ -51,23 +51,15 @@ class AlienInvasion:
 
             # Check for certain 'movement' key presses.
             elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_RIGHT:
-                    # Move the alien ship to the right
-                    self.ship.moving_right = True
-                elif event.key == pygame.K_LEFT:
-                    # Move the alien ship to the left
-                    self.ship.moving_left = True
+                self._check_keydown_events( event )
 
             elif event.type == pygame.KEYUP:
-                if event.key == pygame.K_RIGHT:
-                    # Stop the movement to the right.
-                    self.ship.moving_right = False
-                elif event.key == pygame.K_LEFT:
-                    # Stop the movement to the left.
-                    self.ship.moving_left = False
+                self._check_keyup_events( event )
 
 
-
+###############################################################################
+# Helper (class) functions.
+                
     def _update_screen( self ):
         """ A helper method to update the screen/display.  Note the leading
             underscore in the method name! """
@@ -78,6 +70,32 @@ class AlienInvasion:
         # Make the most recently drawn screen visible.
         pygame.display.flip()
 
+    def _check_keydown_events( self, event ):
+        """ A helper method to respond to key presses.  Note the leading
+            underscore in the method name! """
+        
+        if event.key == pygame.K_RIGHT:
+            # Move the alien ship to the right
+            self.ship.moving_right = True
+        elif event.key == pygame.K_LEFT:
+            # Move the alien ship to the left
+            self.ship.moving_left = True
+
+        elif event.key == pygame.K_q:       # Quit if user presses 'q'
+            sys.exit()
+        
+
+
+    def _check_keyup_events( self, event ):
+        """ A helper method to respond to key releases.  Note the leading
+            underscore in the method name! """
+        
+        if event.key == pygame.K_RIGHT:
+            # Stop the movement to the right.
+            self.ship.moving_right = False
+        elif event.key == pygame.K_LEFT:
+            # Stop the movement to the left.
+            self.ship.moving_left = False
 
 ##############################################################################
 # Main
