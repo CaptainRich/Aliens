@@ -13,7 +13,7 @@ Richard Ay (February 2024, *updated February 2024*)
 
 ## Setup
 
-*To use this program, activate the 'virtual environmnent' "AlienEnv".  
+*To use this program, activate the 'virtual environment' "AlienEnv".  
 
 ## Environment
 A virtual environment is created so that the installation of PyGame remains
