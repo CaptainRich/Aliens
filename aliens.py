@@ -5,7 +5,7 @@ import sys
 import pygame          # MAKE SURE TO INVOKE THE VIRTUAL ENVIRONMENT!!!
 
 from settings import Settings    # The class that manages game settings.
-from ship import Ship            # The class that manages alien ships.
+from ship import Ship            # The class that manages defending ships.
 from bullet import Bullet        # The class that manages bullets.
 
 
@@ -24,7 +24,7 @@ class AlienInvasion:
             (self.settings.screen_width, self.settings.screen_height) )
         pygame.display.set_caption( "Alien Invasion" )
 
-        self.ship = Ship( self )              # Make an instance of an alien ship
+        self.ship = Ship( self )              # Make an instance of a defending ship
         self.bullets = pygame.sprite.Group()  # A group to hold multiple bullets
 
 
@@ -89,7 +89,7 @@ class AlienInvasion:
         for bullet in self.bullets.sprites():   # Draw each bullet
             bullet.draw_bullet()
 
-        self.ship.blitme()            # display the alien ship
+        self.ship.blitme()            # display the defending ship
 
         # Make the most recently drawn screen visible.
         pygame.display.flip()
@@ -100,10 +100,10 @@ class AlienInvasion:
             underscore in the method name! """
         
         if event.key == pygame.K_RIGHT:
-            # Move the alien ship to the right
+            # Move the defending ship to the right
             self.ship.moving_right = True
         elif event.key == pygame.K_LEFT:
-            # Move the alien ship to the left
+            # Move the defending ship to the left
             self.ship.moving_left = True
 
         elif event.key == pygame.K_q:       # Quit if user presses 'q'

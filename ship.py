@@ -1,9 +1,9 @@
-""" A module to contain/address the alien ship(s). """
+""" A module to contain/address the defending ship(s). """
 
 import pygame
 
 class Ship:
-    """ The class to manage the alien shipss. """
+    """ The class to manage the defending ships. """
 
     def __init__( self, ai_game ):
         """ Initialize the ship and its starting position. """
@@ -15,7 +15,7 @@ class Ship:
         self.image = pygame.image.load( 'images/ship.bmp' )
         self.rect  = self.image.get_rect()
 
-        # Start each new (alien) ship at the bottom center of the screen.
+        # Start each new (defending) ship at the bottom center of the screen.
         self.rect.midbottom = self.screen_rect.midbottom
 
         # Store the ship's exact horizontal screen position.
@@ -42,5 +42,5 @@ class Ship:
 
     
     def blitme( self ):
-        """ Draw the alien ship at its current location. """
+        """ Draw the defending ship at its current location. """
         self.screen.blit( self.image, self.rect )

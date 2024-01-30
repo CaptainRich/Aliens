@@ -11,7 +11,7 @@ class Settings:
         self.screen_height = 800
         self.bg_color      = ( 230, 230, 230 ) # background color
 
-        # Define the ship settings
+        # Define the defending ship settings
         self.ship_speed = 1.5       # Default is 1.5 pixels per keypress
 
         # Define the bullet settings

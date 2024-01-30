@@ -1,4 +1,4 @@
-# $`\textcolor{blue}{\text{Directory-Scan}}`$
+# $`\textcolor{blue}{\text{Aliens}}`$
 An Alien shooter game, illustrating the implementation of 'pygame'.
 Richard Ay (February 2024, *updated February 2024*)
 
@@ -43,7 +43,8 @@ The Alien ship can be moved left/right using the keyboard 'arrow' keys.  The gam
 **aliens.py** - the main game file, invoked to play the game.  
 **bullet.py** - a class module controlling the firing of bullets.    
 **settings.py** - a class module managing the game settings.  
-**ship.py** - a class module managing the alien ship setup, drawing, and movement.  
+**ship.py** - a class module managing the defending ship setup, drawing, and movement.  
+**ufos.py** - a class module managing the alien ships (ufos).
 
 **/images** - a subdirectory with game images
 
