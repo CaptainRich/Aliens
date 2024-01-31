@@ -7,6 +7,7 @@ import pygame          # MAKE SURE TO INVOKE THE VIRTUAL ENVIRONMENT!!!
 from settings import Settings    # The class that manages game settings.
 from ship import Ship            # The class that manages defending ships.
 from bullet import Bullet        # The class that manages bullets.
+from ufos import UFOs            # The class that manages UFOs.
 
 
 ##############################################################################
@@ -24,8 +25,11 @@ class AlienInvasion:
             (self.settings.screen_width, self.settings.screen_height) )
         pygame.display.set_caption( "Alien Invasion" )
 
-        self.ship = Ship( self )              # Make an instance of a defending ship
+        self.ship    = Ship( self )           # Make an instance of a defending ship
         self.bullets = pygame.sprite.Group()  # A group to hold multiple bullets
+        self.ufos    = pygame.sprite.Group()  # A group to hold multiple UFOs
+
+        self._create_fleet()                  # Create the UFO fleet
 
 
     def run_game(self):
@@ -46,6 +50,9 @@ class AlienInvasion:
 
 
 
+###############################################################################
+# Helper (class) functions.
+            
     def _update_bullets( self ):
         """ A helper method to respond to manage bullets. Note the leading
             underscore in the method name! """ 
@@ -77,8 +84,6 @@ class AlienInvasion:
                 self._check_keyup_events( event )
 
 
-###############################################################################
-# Helper (class) functions.
                 
     def _update_screen( self ):
         """ A helper method to update the screen/display.  Note the leading
@@ -90,6 +95,7 @@ class AlienInvasion:
             bullet.draw_bullet()
 
         self.ship.blitme()            # display the defending ship
+        self.ufos.draw( self.screen ) # display the ufo
 
         # Make the most recently drawn screen visible.
         pygame.display.flip()
@@ -135,6 +141,12 @@ class AlienInvasion:
             self.bullets.add( new_bullet )
 
 
+    def _create_fleet( self ):
+        """ Create the fleet of UFOs. """
+        # Make a single UFO
+        ufo = UFOs( self )
+        self.ufos.add( ufo )
+        
         
 ##############################################################################
 # Main
