@@ -12,13 +12,13 @@ class Settings:
         self.bg_color      = ( 230, 230, 230 ) # background color
 
         # Define the defending ship settings
-        self.ship_speed = 1.5       # Default is 1.5 pixels per keypress
+        self.ship_speed = 2       # Default is 2 pixels per keypress
 
         # Define the bullet settings
         self.bullet_speed    = 3.0
         self.bullet_width    = 4
         self.bullet_height   = 15
-        self.bullets_allowed = 5
+        self.bullets_allowed = 4
         self.bullet_color    = ( 60, 60, 60 )
 
         # Define the settings for the UFOs
