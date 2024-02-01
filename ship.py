@@ -40,7 +40,13 @@ class Ship:
         # Now update the "rect" object based on the ships 'x'.
         self.rect.x = self.x
 
-    
+
+    def center_ship( self ):
+        """ Center the defender's ship on the screen. """ 
+        self.rect.midbottom = self.screen_rect.midbottom
+        self.x = float( self.rect.x )
+        
+          
     def blitme( self ):
         """ Draw the defending ship at its current location. """
         self.screen.blit( self.image, self.rect )

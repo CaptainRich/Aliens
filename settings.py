@@ -13,6 +13,7 @@ class Settings:
 
         # Define the defending ship settings
         self.ship_speed = 2       # Default is 2 pixels per keypress
+        self.ship_limit = 3       # The number of defending ships allowed
 
         # Define the bullet settings
         self.bullet_speed    = 3.0
@@ -23,7 +24,7 @@ class Settings:
 
         # Define the settings for the UFOs
         self.ufo_speed        = 1.0
-        self.fleet_drop_speed = 10
+        self.fleet_drop_speed = 50
 
         # UFO fleet direction of 1 represents 'right', -1 represents 'left'
         self.fleet_direction  = 1
