@@ -36,12 +36,13 @@ The Alien ship can be moved left/right using the keyboard 'arrow' keys.  The gam
 
 
 ## References
-1. Python Crash Course, Eric Matthes, No Starch Press, 2023  
+1. Python Crash Course, Eric Matthes, No Starch Press, 2023. Chapters 12-14.  
 
 
 ## File List
 **aliens.py** - the main game file, invoked to play the game.  
 **bullet.py** - a class module controlling the firing of bullets.    
+**game_stats.py** - a class module to track game statistics.  
 **settings.py** - a class module managing the game settings.  
 **ship.py** - a class module managing the defending ship setup, drawing, and movement.  
 **ufos.py** - a class module managing the alien ships (ufos).
