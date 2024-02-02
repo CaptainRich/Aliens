@@ -10,6 +10,7 @@ from ship import Ship            # The class that manages defending ships.
 from bullet import Bullet        # The class that manages bullets.
 from ufos import UFOs            # The class that manages UFOs.
 from game_stats import GameStats # The class to monitor game statistics
+from button import Button        # The class to draw the 'play' button
 
 
 ##############################################################################
@@ -36,8 +37,11 @@ class AlienInvasion:
 
         self._create_fleet()                  # Create the UFO fleet
 
-        # Set the game to an 'active' state
-        self.game_active = True
+        # Set the game to an 'in-active' state upon startup.
+        self.game_active = False
+
+        # Create the 'play' button (which doesn't display it).
+        self.play_button = Button( self, "Play" )
 
 
     def run_game(self):
@@ -115,6 +119,33 @@ class AlienInvasion:
             elif event.type == pygame.KEYUP:
                 self._check_keyup_events( event )
 
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = pygame.mouse.get_pos()
+                self._check_play_button( mouse_pos )
+
+
+
+    def _check_play_button( self, mouse_pos ):
+        """ A helper method to start a new game if the mouse click occurs
+            withing the 'play' button boundary. """
+        button_clicked = self.play_button.rect.collidepoint( mouse_pos )
+
+        # Only reset if the click occurred when the game was inactive.
+        if button_clicked and not self.game_active:
+            # Reset the game statistics.
+            self.stats.reset_stats()
+            self.game_active = True        # Make the game active.
+
+            # Get rid of any remaining bullets or UFOs
+            self.bullets.empty()
+            self.ufos.empty()
+
+            # Create a new fleet of UFOs and center the defender's ship.
+            self._create_fleet()
+            self.ship.center_ship()
+
+            # Hide the mouse cursor while game is active
+            pygame.mouse.set_visible( False )
 
                 
     def _update_screen( self ):
@@ -128,6 +159,10 @@ class AlienInvasion:
 
         self.ship.blitme()            # display the defending ship
         self.ufos.draw( self.screen ) # display the ufo
+
+        # Display the 'play' button.
+        if not self.game_active:
+            self.play_button.draw_button()
 
         # Make the most recently drawn screen visible.
         pygame.display.flip()
@@ -256,6 +291,7 @@ class AlienInvasion:
 
         else:
             self.game_active = False
+            pygame.mouse.set_visible( True )  # Unhide the mouse cursor.
     
 
 
