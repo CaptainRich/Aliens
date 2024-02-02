@@ -132,8 +132,9 @@ class AlienInvasion:
 
         # Only reset if the click occurred when the game was inactive.
         if button_clicked and not self.game_active:
-            # Reset the game statistics.
+            # Reset the game statistics and settings
             self.stats.reset_stats()
+            self.settings.initialize_dynamic_settings()
             self.game_active = True        # Make the game active.
 
             # Get rid of any remaining bullets or UFOs
@@ -268,6 +269,9 @@ class AlienInvasion:
         if not self.ufos:
             self.bullets.empty()
             self._create_fleet()
+
+            # Increase the game speeds
+            self.settings.increase_speed()
 
 
     def _ship_hit( self ):

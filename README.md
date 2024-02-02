@@ -41,7 +41,8 @@ The Alien ship can be moved left/right using the keyboard 'arrow' keys.  The gam
 
 ## File List
 **aliens.py** - the main game file, invoked to play the game.  
-**bullet.py** - a class module controlling the firing of bullets.    
+**bullet.py** - a class module controlling the firing of bullets.   
+**button.py** - a class module to implement a 'play' button for the game.   
 **game_stats.py** - a class module to track game statistics.  
 **settings.py** - a class module managing the game settings.  
 **ship.py** - a class module managing the defending ship setup, drawing, and movement.  
