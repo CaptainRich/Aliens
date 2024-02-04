@@ -5,7 +5,7 @@ class Button:
     """ A class to build buttons for the game. """
 
     def __init__( self, ai_game, msg ):
-        """ Initialize the button attributes. """
+        """ Initialize the (game start) button attributes. """
         self.screen      = ai_game.screen
         self.screen_rect = self.screen.get_rect()
 
