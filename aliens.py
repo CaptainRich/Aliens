@@ -5,12 +5,13 @@ import sys
 from time import sleep       # To pause the game if the defender is hit.
 import pygame                # MAKE SURE TO INVOKE THE VIRTUAL ENVIRONMENT!!!
 
-from settings import Settings    # The class that manages game settings.
-from ship import Ship            # The class that manages defending ships.
-from bullet import Bullet        # The class that manages bullets.
-from ufos import UFOs            # The class that manages UFOs.
-from game_stats import GameStats # The class to monitor game statistics
-from button import Button        # The class to draw the 'play' button
+from settings import Settings     # The class that manages game settings.
+from ship import Ship             # The class that manages defending ships.
+from bullet import Bullet         # The class that manages bullets.
+from ufos import UFOs             # The class that manages UFOs.
+from game_stats import GameStats  # The class to monitor game statistics
+from button import Button         # The class to draw the 'play' button
+from scoreboard import Scoreboard # The class to draw the 'score' to the screen
 
 
 ##############################################################################
@@ -30,6 +31,9 @@ class AlienInvasion:
 
         # Create an instance of the GameStats to store game statistics
         self.stats = GameStats( self )
+
+        # Create an instance of the object to display the game statistics.
+        self.scorebrd = Scoreboard( self )
 
         self.ship    = Ship( self )           # Make an instance of a defending ship
         self.bullets = pygame.sprite.Group()  # A group to hold multiple bullets
@@ -134,6 +138,9 @@ class AlienInvasion:
         if button_clicked and not self.game_active:
             # Reset the game statistics and settings
             self.stats.reset_stats()
+            self.scorebrd.prep_score()
+            self.scorebrd.prep_level()
+            self.scorebrd.prep_ships()
             self.settings.initialize_dynamic_settings()
             self.game_active = True        # Make the game active.
 
@@ -160,6 +167,9 @@ class AlienInvasion:
 
         self.ship.blitme()            # display the defending ship
         self.ufos.draw( self.screen ) # display the ufo
+
+        # Display the scoreboard (info).
+        self.scorebrd.show_score()
 
         # Display the 'play' button.
         if not self.game_active:
@@ -264,14 +274,30 @@ class AlienInvasion:
 
         collisions = pygame.sprite.groupcollide( self.bullets, self.ufos, True, True )  
 
+        # Update the score if a UFO is destroyed (hit by a bullet).
+        if collisions:
+            # Loop over this dictionary to score all UFO hitss
+            for ufos in collisions.values():
+                self.stats.score += self.settings.ufo_points * len( ufos )
+
+                # Limit the max score per UFO
+                if self.stats.score > self.settings.max_points:
+                    self.stats.score = self.settings.max_points     
+
+                self.scorebrd.prep_score()
+                self.scorebrd.check_high_score()
+
         # If the UFO group is empty (all destroyed), clear any existing bullets 
         # and create a new fleet of UFOs.
         if not self.ufos:
             self.bullets.empty()
             self._create_fleet()
 
-            # Increase the game speeds
+            # Increase the game speeds and the level number.
             self.settings.increase_speed()
+            self.stats.level += 1
+            self.scorebrd.prep_level()
+
 
 
     def _ship_hit( self ):
@@ -281,6 +307,7 @@ class AlienInvasion:
 
             # Decrement the number of defending ships left to play with.
             self.stats.ships_left -= 1
+            self.scorebrd.prep_ships()       # Remove a ship image
 
             # Remove any existing bullets/UFOs from the screen.
             self.bullets.empty()

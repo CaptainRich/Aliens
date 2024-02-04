@@ -25,6 +25,7 @@ class Settings:
 
         # Define how quickly the game speeds up with each new level.
         self.speedup_scale = 1.1              # About 10%
+        self.score_scale   = 2.0              # Double point score per game level.
 
         self.initialize_dynamic_settings()    # These can change during a game.
 
@@ -38,9 +39,18 @@ class Settings:
         # UFO fleet direction of 1 represents 'right', -1 represents 'left'
         self.fleet_direction  = 1
 
+        # Set the points gained by destroying a UFO.
+        self.ufo_points = 10
+        self.max_points = 2500
+
 
     def increase_speed( self ):
         """ Increase the speed settings of the game components. """
         self.ship_speed   *= self.speedup_scale
         self.bullet_speed *= self.speedup_scale
         self.ufo_speed    *= self.speedup_scale
+
+        # Update the points acquired for destroying UFOs when a new fleet
+        # is generated.
+        self.ufo_points   = int( self.ufo_points * self.score_scale )
+        #print( f"New UFO score value is {self.ufo_points}" )

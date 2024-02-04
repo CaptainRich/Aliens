@@ -1,12 +1,15 @@
 """ A module to contain/address the defending ship(s). """
 
 import pygame
+from pygame.sprite import Sprite
 
-class Ship:
+class Ship ( Sprite ):
     """ The class to manage the defending ships. """
 
     def __init__( self, ai_game ):
         """ Initialize the ship and its starting position. """
+        super().__init__()
+
         self.screen      = ai_game.screen
         self.settings    = ai_game.settings
         self.screen_rect = ai_game.screen.get_rect()

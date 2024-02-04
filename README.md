@@ -44,6 +44,7 @@ The Alien ship can be moved left/right using the keyboard 'arrow' keys.  The gam
 **bullet.py** - a class module controlling the firing of bullets.   
 **button.py** - a class module to implement a 'play' button for the game.   
 **game_stats.py** - a class module to track game statistics.  
+**scoreboard.py** - a class to manage and display the game score components.    
 **settings.py** - a class module managing the game settings.  
 **ship.py** - a class module managing the defending ship setup, drawing, and movement.  
 **ufos.py** - a class module managing the alien ships (ufos).
@@ -52,13 +53,18 @@ The Alien ship can be moved left/right using the keyboard 'arrow' keys.  The gam
 
 ## Technologies and Imports
 The following modules are necessary imports (imported in the .py files):  
+- pygame  
 - sys
-- pygame
+- time  
 
 ## Images
 The image below shows a sample game screen:
 ![Sample Display](https://github.com/CaptainRich/Aliens/blob/develop/Images/game-screen.png)
 
-The image below depicts a (class) mind-map for the game program:
-![Mind Map](https://github.com/CaptainRich/Aliens/blob/develop/Images/program-mindmap.png)
+The images below depict several views of the (class) mind-map for the game program:
+![Mind Map0](https://github.com/CaptainRich/Aliens/blob/scoring/Images/program-mindmap0.png)  
+
+![Mind Map1](https://github.com/CaptainRich/Aliens/blob/scoring/Images/program-mindmap0.png)  
+
+![Mind Map2](https://github.com/CaptainRich/Aliens/blob/scoring/Images/program-mindmap0.png)  
 
