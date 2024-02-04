@@ -276,13 +276,9 @@ class AlienInvasion:
 
         # Update the score if a UFO is destroyed (hit by a bullet).
         if collisions:
-            # Loop over this dictionary to score all UFO hitss
+            # Loop over this dictionary to score all UFO hits
             for ufos in collisions.values():
-                self.stats.score += self.settings.ufo_points * len( ufos )
-
-                # Limit the max score per UFO
-                if self.stats.score > self.settings.max_points:
-                    self.stats.score = self.settings.max_points     
+                self.stats.score += self.settings.ufo_points * len( ufos )    
 
                 self.scorebrd.prep_score()
                 self.scorebrd.check_high_score()

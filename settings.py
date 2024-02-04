@@ -7,8 +7,8 @@ class Settings:
         """ Initialize all of the game settings. """
         
         # Screen settings
-        self.screen_width  = 1200
-        self.screen_height = 800
+        self.screen_width  = 800
+        self.screen_height = 400
         self.bg_color      = ( 230, 230, 230 ) # background color
 
         # Define the defending ship settings       
@@ -53,4 +53,9 @@ class Settings:
         # Update the points acquired for destroying UFOs when a new fleet
         # is generated.
         self.ufo_points   = int( self.ufo_points * self.score_scale )
+        
+        # Limit the max score per UFO
+        if self.ufo_points > self.max_points:
+            self.ufo_points = self.max_points 
+
         #print( f"New UFO score value is {self.ufo_points}" )

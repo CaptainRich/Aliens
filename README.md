@@ -64,7 +64,7 @@ The image below shows a sample game screen:
 The images below depict several views of the (class) mind-map for the game program:
 ![Mind Map0](https://github.com/CaptainRich/Aliens/blob/scoring/Images/program-mindmap0.png)  
 
-![Mind Map1](https://github.com/CaptainRich/Aliens/blob/scoring/Images/program-mindmap0.png)  
+![Mind Map1](https://github.com/CaptainRich/Aliens/blob/scoring/Images/program-mindmap1.png)  
 
-![Mind Map2](https://github.com/CaptainRich/Aliens/blob/scoring/Images/program-mindmap0.png)  
+![Mind Map2](https://github.com/CaptainRich/Aliens/blob/scoring/Images/program-mindmap2.png)  
 
