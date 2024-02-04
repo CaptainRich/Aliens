@@ -60,5 +60,5 @@ The image below shows a sample game screen:
 ![Sample Display](https://github.com/CaptainRich/Aliens/blob/develop/Images/game-screen.png)
 
 The image below depicts a (class) mind-map for the game program:
-![Mind Map](https://github.com/CaptainRich/Aliens/blob/develop/Images/Program-MindMap.png)
+![Mind Map](https://github.com/CaptainRich/Aliens/blob/develop/Images/program-mindmap.png)
 
