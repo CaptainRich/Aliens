@@ -9,7 +9,7 @@ Richard Ay (February 2024, *updated February 2024*)
 * [References](#references)
 * [File List](#file-list)
 * [Technologies and Imports](#Technologies-and-Imports)
-* [Sample Display](#sample-display)
+* [Images](#Images)
 
 ## Setup
 
@@ -55,10 +55,10 @@ The following modules are necessary imports (imported in the .py files):
 - sys
 - pygame
 
-## Sample Display
+## Images
 The image below shows a sample game screen:
 ![Sample Display](https://github.com/CaptainRich/Aliens/blob/develop/Images/game-screen.png)
 
 The image below depicts a (class) mind-map for the game program:
-![Sample Display](https://github.com/CaptainRich/Aliens/blob/develop/Images/Program-MindMap.png)
+![Mind Map](https://github.com/CaptainRich/Aliens/blob/develop/Images/Program-MindMap.png)
 
