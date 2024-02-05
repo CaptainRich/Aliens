@@ -59,7 +59,7 @@ The following modules are necessary imports (imported in the .py files):
 
 ## Images
 The image below shows a sample game screen:  
-![Sample Display](https://github.com/CaptainRich/Aliens/blob/Images/game-screen.png)
+![Sample Display](https://github.com/CaptainRich/Aliens/blob/scoring/Images/game-screen.png)
 
 The images below depict several views of the (class) mind-map for the game program:  
 ![Mind Map0](https://github.com/CaptainRich/Aliens/blob/scoring/Images/program-mindmap0.png)  
