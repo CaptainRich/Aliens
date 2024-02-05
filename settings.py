@@ -45,7 +45,9 @@ class Settings:
 
 
     def increase_speed( self ):
-        """ Increase the speed settings of the game components. """
+        """ Increase the speed settings of the game components. This happens
+            each time the UFO fleet is destroyed and the game level increases. """
+        
         self.ship_speed   *= self.speedup_scale
         self.bullet_speed *= self.speedup_scale
         self.ufo_speed    *= self.speedup_scale

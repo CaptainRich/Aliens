@@ -3,7 +3,8 @@ from pygame.sprite import Group
 from ship import Ship
 
 class Scoreboard:
-    """ A class to report game scoring. """
+    """ A class to report game scoring. Numeric values and ship images
+        are displayed and updated on the screen."""
 
     def __init__( self, ai_game ):
         """ Initialize the game score keeping parameters. """
@@ -18,6 +19,11 @@ class Scoreboard:
         self.font       = pygame.font.SysFont( None, 24 )
 
         # Prepare the initial 'score', 'level' and 'ship' images.
+        self.prepare_score_images()
+
+    
+    def prepare_score_images( self ):
+        """ Prep the scores, levels, and ship counters. """
         self.prep_score()
         self.prep_high_score()
         self.prep_level()
@@ -83,8 +89,16 @@ class Scoreboard:
 
     def show_score( self ):
         """ Display the scoring data. """
+
+        # Display the current game score.
         self.screen.blit( self.score_image, self.score_rect )
+
+        # Display the high score.
         self.screen.blit( self.high_score_image, self.high_score_rect )
+
+        # Display the game level
         self.screen.blit( self.level_image, self.level_rect )
+
+        # Display the remaining "defender's" ships.
         self.ships.draw( self.screen )
 
