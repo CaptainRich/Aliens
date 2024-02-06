@@ -12,7 +12,7 @@ class Settings:
         self.bg_color      = ( 230, 230, 230 ) # background color
 
         # Define the defending ship settings       
-        self.ship_limit = 3       # The number of defending ships allowed
+        self.ship_limit = 2       # The number of additional defending ships allowed
 
         # Define the bullet settings
         self.bullet_width    = 4
@@ -21,7 +21,7 @@ class Settings:
         self.bullet_color    = ( 60, 60, 60 )
 
         # Define the settings for the UFOs
-        self.fleet_drop_speed = 10
+        self.fleet_drop_speed = 60
 
         # Define how quickly the game speeds up with each new level.
         self.speedup_scale = 1.1              # About 10%

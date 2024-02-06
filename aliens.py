@@ -299,7 +299,7 @@ class AlienInvasion:
     def _ship_hit( self ):
         """ Defending ship has been hit by a UFO. """
 
-        if( self.stats.ships_left > 1 ):
+        if( self.stats.ships_left > 0 ):
 
             # Decrement the number of defending ships left to play with.
             self.stats.ships_left -= 1
@@ -314,7 +314,7 @@ class AlienInvasion:
             self.ship.center_ship()
 
             # Pause the game so the player can get ready.
-            sleep( 0.75 )
+            sleep( 2.0 )
 
         else:
             self.game_active = False
