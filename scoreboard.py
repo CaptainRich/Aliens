@@ -78,6 +78,22 @@ class Scoreboard:
             ship.rect.y = 10
             self.ships.add( ship )
 
+        # Label the defender's backup ships
+        backup_str = f"Defending Reserves"
+        self.backup_image = self.font.render( backup_str, True, self.text_color, 
+                                             self.settings.bg_color )
+        
+        # Position this text to the right of the right-most ship.
+        self.backup_rect      = self.backup_image.get_rect()
+
+        # If there are no defending ships left, position the text at the screen left.
+        if self.stats.ships_left > 0:
+            self.backup_rect.left = 15 + self.stats.ships_left * ship.rect.width
+        else:
+            self.backup_rect.left = 15
+
+        self.backup_rect.y    = 15
+
 
 
     def check_high_score( self ):
@@ -101,4 +117,5 @@ class Scoreboard:
 
         # Display the remaining "defender's" ships.
         self.ships.draw( self.screen )
+        self.screen.blit( self.backup_image, self.backup_rect )
 

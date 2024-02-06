@@ -21,7 +21,7 @@ class Settings:
         self.bullet_color    = ( 60, 60, 60 )
 
         # Define the settings for the UFOs
-        self.fleet_drop_speed = 60
+        self.fleet_drop_speed = 10
 
         # Define how quickly the game speeds up with each new level.
         self.speedup_scale = 1.1              # About 10%
