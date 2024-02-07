@@ -43,13 +43,18 @@ The Alien ship can be moved left/right using the keyboard 'arrow' keys.  The gam
 **aliens.py** - the main game file, invoked to play the game.  
 **bullet.py** - a class module controlling the firing of bullets.   
 **button.py** - a class module to implement a 'play' button for the game.   
+**crash.py**  - a class to play a crash sound when a defender's ship is destroyed.  
 **game_stats.py** - a class module to track game statistics.  
 **scoreboard.py** - a class to manage and display the game score components.    
 **settings.py** - a class module managing the game settings.  
 **ship.py** - a class module managing the defending ship setup, drawing, and movement.  
 **ufos.py** - a class module managing the alien ships (ufos).
+**ufo_destroyed.py** - a class to play a sound when a UFO is destroyed.
 
-**/images** - a subdirectory with game images
+**/images** - a subdirectory with game images  
+
+**crash.wav** - the sound file for destroying a defending ship.  
+**ufo_destory.wave** - the sound file for destroying a UFO.  
 
 ## Technologies and Imports
 The following modules are necessary imports (imported in the .py files):  

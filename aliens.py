@@ -8,10 +8,12 @@ import pygame                # MAKE SURE TO INVOKE THE VIRTUAL ENVIRONMENT!!!
 from settings import Settings     # The class that manages game settings.
 from ship import Ship             # The class that manages defending ships.
 from bullet import Bullet         # The class that manages bullets.
-from ufos import UFOs             # The class that manages UFOs.
-from game_stats import GameStats  # The class to monitor game statistics
-from button import Button         # The class to draw the 'play' button
-from scoreboard import Scoreboard # The class to draw the 'score' to the screen
+from ufos import UFOs              # The class that manages UFOs.
+from game_stats import GameStats   # The class to monitor game statistics
+from button import Button          # The class to draw the 'play' button
+from scoreboard import Scoreboard  # The class to draw the 'score' to the screen
+from crash import Crash            # The class to play a sound when a defender's ship is destroyed.
+from ufo_destroy import Ufodestroy # The class to play a sound when a UFO is destroyed.
 
 
 ##############################################################################
@@ -31,6 +33,10 @@ class AlienInvasion:
 
         # Create an instance of the GameStats to store game statistics
         self.stats = GameStats( self )
+
+        # Create an instance of the 'crash sound'.
+        self.crash    = Crash( )
+        self.ufo_down = Ufodestroy()
 
         # Create an instance of the object to display the game statistics.
         self.scorebrd = Scoreboard( self )
@@ -283,6 +289,9 @@ class AlienInvasion:
                 self.scorebrd.prep_score()
                 self.scorebrd.check_high_score()
 
+                # Play the sound for the UFO being destroyed.
+                self.ufo_down.destroy_sound()
+
         # If the UFO group is empty (all destroyed), clear any existing bullets 
         # and create a new fleet of UFOs.
         if not self.ufos:
@@ -299,6 +308,9 @@ class AlienInvasion:
     def _ship_hit( self ):
         """ Defending ship has been hit by a UFO. """
 
+        # Play the 'crash' sound.
+        self.crash.crash_sound()
+
         if( self.stats.ships_left > 0 ):
 
             # Decrement the number of defending ships left to play with.
@@ -308,6 +320,9 @@ class AlienInvasion:
             # Remove any existing bullets/UFOs from the screen.
             self.bullets.empty()
             self.ufos.empty()
+
+            # Play the 'crash' sound.
+            self.crash.crash_sound()
 
             # Create a new fleet of UFos, a new defender's ship, and center it.
             self._create_fleet()

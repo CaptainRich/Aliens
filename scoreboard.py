@@ -92,7 +92,7 @@ class Scoreboard:
         else:
             self.backup_rect.left = 15
 
-        self.backup_rect.y    = 15
+        self.backup_rect.y        = 15    # The vertical position value.
 
 
 
