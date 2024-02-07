@@ -54,7 +54,7 @@ The Alien ship can be moved left/right using the keyboard 'arrow' keys.  The gam
 **/images** - a subdirectory with game images  
 
 **crash.wav** - the sound file for destroying a defending ship.  
-**ufo_destory.wave** - the sound file for destroying a UFO.  
+**ufo_destory.wave** - the sound file for destroying a UFO.    
 
 ## Technologies and Imports
 The following modules are necessary imports (imported in the .py files):  
