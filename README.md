@@ -48,7 +48,7 @@ The Alien ship can be moved left/right using the keyboard 'arrow' keys.  The gam
 **scoreboard.py** - a class to manage and display the game score components.    
 **settings.py** - a class module managing the game settings.  
 **ship.py** - a class module managing the defending ship setup, drawing, and movement.  
-**ufos.py** - a class module managing the alien ships (ufos).
+**ufos.py** - a class module managing the alien ships (ufos).  
 **ufo_destroyed.py** - a class to play a sound when a UFO is destroyed.  
 
 **/images** - a subdirectory with game images  
